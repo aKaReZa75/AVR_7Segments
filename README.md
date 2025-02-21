@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This document is currently being written and has not been completed yet.
+
 # 🔗 Resources
   Here you'll find a collection of useful links and videos related to the topic of AVR microcontrollers.  
   
