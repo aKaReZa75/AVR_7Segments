@@ -388,27 +388,71 @@ In this example, the 7-Segments will be updated continuously at the specified in
 
 # 🔗 Resources
   Here you'll find a collection of useful links and videos related to the topic of AVR microcontrollers.  
+
+<table style="border-collapse: collapse;">
+  <tr>
+    <td valign="top" style="padding: 0 10px;">
+      <h3 style="margin: 0;">
+        <a href="https://youtu.be/HGlJtcpjZ-E">aKaReZa 44 – AVR, 7Segment - Part A</a>
+      </h3>
+      <p style="margin: 8px 0 0;">
+        Learn how to set up a common anode 7-segment display with an AVR microcontroller on a breadboard, and then multiplex a four-digit 7-segment display using a custom shield to improve code readability.
+      </p>
+    </td>
+    <td width="360" valign="top" style="padding: 0;">
+      <a href="https://youtu.be/HGlJtcpjZ-E">
+        <img src="https://img.youtube.com/vi/HGlJtcpjZ-E/maxresdefault.jpg"
+             width="360"
+             alt="aKaReZa 44 – AVR, 7Segment - Part A Thumbnail"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" style="padding: 0 10px;">
+      <h3 style="margin: 0;">
+        <a href="https://youtu.be/_pwxBJ06aMk">aKaReZa 47 – AVR, 7Segment - Part B</a>
+      </h3>
+      <p style="margin: 8px 0 0;">
+        Continuation of setting up 7-segment displays, building a counter, adding button functionality, displaying digits, optimizing code, and adding macros.
+      </p>
+    </td>
+    <td width="360" valign="top" style="padding: 0;">
+      <a href="https://youtu.be/_pwxBJ06aMk">
+        <img src="https://img.youtube.com/vi/_pwxBJ06aMk/maxresdefault.jpg"
+             width="360"
+             alt="aKaReZa 47 – AVR, 7Segment - Part B Thumbnail"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" style="padding: 0 10px;">
+      <h3 style="margin: 0;">
+        <a href="https://youtu.be/5OG6KQWCLCA">aKaReZa 53 – AVR, 7Segment - Part C</a>
+      </h3>
+      <p style="margin: 8px 0 0;">
+        Continuation of setting up 7-segment displays, addressing three software issues: modular code writing, display refresh during button press, and one-second counting.
+      </p>
+    </td>
+    <td width="360" valign="top" style="padding: 0;">
+      <a href="https://youtu.be/5OG6KQWCLCA">
+        <img src="https://img.youtube.com/vi/5OG6KQWCLCA/maxresdefault.jpg"
+             width="360"
+             alt="aKaReZa 53 – AVR, 7Segment - Part C Thumbnail"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
   
 > [!TIP]
 > The resources are detailed in the sections below.  
 > To access any of them, simply click on the corresponding blue link.
 
-- [aKaReZa 44 - AVR, 7Segment - Part A](https://youtu.be/HGlJtcpjZ-E)  
-  ---  
-    Learn how to set up a common anode 7-segment display with an AVR microcontroller on a breadboard, and then multiplex a four-digit 7-segment display using a custom shield to improve code readability.
-
-- [aKaReZa 47 - AVR, 7Segment - Part B](https://youtu.be/_pwxBJ06aMk)  
-  ---  
-    Continuation of setting up 7-segment displays, building a counter, adding button functionality, displaying digits, optimizing code, and adding macros.
-
-- [aKaReZa 53 - AVR, 7Segment - Part C](https://youtu.be/5OG6KQWCLCA)  
-  ---  
-    Continuation of setting up 7-segment displays, addressing three software issues: modular code writing, display refresh during button press, and one-second counting.
-
 - [AVR Microntroller](https://github.com/aKaReZa75/AVR)
   ---  
     This repository contains comprehensive resources for AVR microcontrollers, including hardware schematics, software libraries, and educational projects.
-
 
 # 💻 How to Use Git and GitHub
 To access the repository files and save them on your computer, there are two methods available:
