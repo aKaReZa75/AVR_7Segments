@@ -2,9 +2,6 @@
 
 A 7-segment display is an electronic display device used to represent numbers, letters, and sometimes other characters. It consists of seven LEDs arranged in a specific way that can be turned on or off to form different digits or characters. The display has 7 segments (labeled A to G) and an optional decimal point (DP). By turning different combinations of these segments on or off, it is possible to represent all the digits from 0 to 9, and in some cases, letters like A, b, C, etc.
 
-> [!CAUTION]
-> It is absolutely critical that you carefully read every single word of this document, line by line, to ensure you don't miss any details. Nothing can be overlooked.
-
 <table>
   <tr>
   <td valign="top">
@@ -23,7 +20,17 @@ A 7-segment display is an electronic display device used to represent numbers, l
              alt="aKaReZa 95 - Programming, Git - PART B Thumbnail"/>
       </a>
     </td>
+
+  </td>
   </tr>
+  <tr>
+  <td colspan="2">
+
+  > [!CAUTION]
+  > It is absolutely critical that you carefully read every single word of this document, line by line, to ensure you don't miss any details. Nothing can be overlooked.
+      
+  </td>
+  </tr>  
 </table>
 
 ## How a 7-Segment Display Works
