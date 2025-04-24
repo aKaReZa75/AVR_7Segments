@@ -5,11 +5,26 @@ A 7-segment display is an electronic display device used to represent numbers, l
 > [!CAUTION]
 > It is absolutely critical that you carefully read every single word of this document, line by line, to ensure you don't miss any details. Nothing can be overlooked.
 
-> [!TIP]
-> If you're looking to better understand how to navigate and use my GitHub repositories — including exploring their structure, downloading or cloning projects, submitting issues, and asking questions 
-> everything you need is clearly explained in this video:  
-> [aKaReZa 95 - Programming, Git - PART B](https://youtu.be/zYiUItVFRqQ)   
-> Make sure to check it out!
+<table>
+  <tr>
+  <td valign="top">
+  
+  > [!TIP]  
+  > If you're looking to better understand how to navigate and use my GitHub repositories — including exploring their structure, downloading or cloning projects, submitting issues, and asking questions,  
+  > everything you need is clearly explained in this video:  
+  > [aKaReZa 95 - Programming, Git - PART B](https://youtu.be/zYiUItVFRqQ)  
+  > Make sure to check it out!
+  
+  </td>
+    <td width="360" valign="middle" style="padding: 0;">
+      <a href="https://youtu.be/zYiUItVFRqQ">
+       <img src="https://img.youtube.com/vi/zYiUItVFRqQ/maxresdefault.jpg"
+             width="360"
+             alt="aKaReZa 95 - Programming, Git - PART B Thumbnail"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## How a 7-Segment Display Works
 A 7-segment display has 7 individual LEDs arranged in the form of a figure-eight. The following is a representation of the segments:
