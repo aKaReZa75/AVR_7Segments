@@ -411,6 +411,23 @@ In this example, the 7-Segments will be updated continuously at the specified in
 # 🔗 Resources
   Here you'll find a collection of useful links and videos related to the topic of AVR microcontrollers.  
 
+```plaintext
+ AVR, 7Segment
+   ├── [aKaReZa 44 - AVR, 7Segment - Part A]
+   │   ├─ Display Setup — Driving common anode + 4-digit multiplexing.
+   │   └─ Code Quality — Readability and structure tips.
+   │
+   ├── [aKaReZa 47 - AVR, 7Segment - Part B]
+   │   ├─ Buttons — Counter increment and input handling.
+   │   ├─ Digit Split — Displaying digits individually.
+   │   └─ Optimization — New macros for cleaner code.
+   │
+   └── [aKaReZa 53 - AVR, 7Segment - Part C]
+       ├─ Modularization — Functions and headers.
+       ├─ Refresh Issue — Software-based fix.
+       └─ Timer — Implementing 1-second Timer.
+```
+
 <table style="border-collapse: collapse;">
   <tr>
     <td valign="top" style="padding: 0 10px;">
