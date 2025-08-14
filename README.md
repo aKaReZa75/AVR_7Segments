@@ -59,6 +59,10 @@ A 7-segment display is an electronic display device used to represent numbers, l
     └─ Multiplex_Example — sample C code
 ```
 
+> [!TIP]
+> The resources are detailed in the sections below.  
+> To access any of them, simply click on the corresponding blue link.
+
 - [Basics](./Basics.md)
   ---
   Covers segment arrangement (A–G), digit/letter combinations, common cathode vs. common anode wiring and logic, and hexadecimal segment code tables for digits 0–F.
