@@ -35,24 +35,24 @@ To display the number '3', the required segments are A, B, C, D, and G. In a com
 
 ### 7-Segment Display Segment Control (Hexadecimal Format)
 
-| Digit | A | B | C | D | E | F | G | Common Cathode (Hex) | Common Anode (Hex) |
-|-------|---|---|---|---|---|---|---|----------------------|--------------------|
-| 0     | 1 | 1 | 1 | 1 | 1 | 1 | 0 | **0x3F**             | **0xC0**           |
-| 1     | 0 | 1 | 1 | 0 | 0 | 0 | 0 | **0x06**             | **0xF9**           |
-| 2     | 1 | 1 | 0 | 1 | 1 | 0 | 1 | **0xB6**             | **0x49**           |
-| 3     | 1 | 1 | 1 | 1 | 0 | 0 | 1 | **0x9E**             | **0x41**           |
-| 4     | 0 | 1 | 1 | 0 | 0 | 1 | 1 | **0x66**             | **0x99**           |
-| 5     | 1 | 0 | 1 | 1 | 0 | 1 | 1 | **0x5E**             | **0x62**           |
-| 6     | 1 | 0 | 1 | 1 | 1 | 1 | 1 | **0x7E**             | **0x32**           |
-| 7     | 1 | 1 | 1 | 0 | 0 | 0 | 0 | **0x4E**             | **0xB9**           |
-| 8     | 1 | 1 | 1 | 1 | 1 | 1 | 1 | **0x7F**             | **0x30**           |
-| 9     | 1 | 1 | 1 | 1 | 0 | 1 | 1 | **0x6E**             | **0x51**           |
-| A     | 1 | 1 | 1 | 0 | 1 | 1 | 1 | **0x7B**             | **0x5A**           |
-| B     | 0 | 1 | 1 | 1 | 1 | 1 | 1 | **0x3E**             | **0x6A**           |
-| C     | 1 | 0 | 0 | 1 | 1 | 1 | 1 | **0x5C**             | **0x74**           |
-| D     | 0 | 1 | 1 | 1 | 1 | 0 | 1 | **0x7A**             | **0x3A**           |
-| E     | 1 | 0 | 0 | 1 | 1 | 1 | 1 | **0x7D**             | **0x6E**           |
-| F     | 1 | 0 | 0 | 0 | 1 | 1 | 1 | **0x5F**             | **0x5E**           |
+| Digit | A | B | C | D | E | F | G | Common Cathode | Common Anode |
+|-------|---|---|---|---|---|---|---|----------------|--------------|
+| 0     | 1 | 1 | 1 | 1 | 1 | 1 | 0 | **0x3F**       | **0xC0**     |
+| 1     | 0 | 1 | 1 | 0 | 0 | 0 | 0 | **0x06**       | **0xF9**     |
+| 2     | 1 | 1 | 0 | 1 | 1 | 0 | 1 | **0x5B**       | **0xA4**     |
+| 3     | 1 | 1 | 1 | 1 | 0 | 0 | 1 | **0x4F**       | **0xB0**     |
+| 4     | 0 | 1 | 1 | 0 | 0 | 1 | 1 | **0x66**       | **0x99**     |
+| 5     | 1 | 0 | 1 | 1 | 0 | 1 | 1 | **0x6D**       | **0x92**     |
+| 6     | 1 | 0 | 1 | 1 | 1 | 1 | 1 | **0x7D**       | **0x82**     |
+| 7     | 1 | 1 | 1 | 0 | 0 | 0 | 0 | **0x07**       | **0xF8**     |
+| 8     | 1 | 1 | 1 | 1 | 1 | 1 | 1 | **0x7F**       | **0x80**     |
+| 9     | 1 | 1 | 1 | 1 | 0 | 1 | 1 | **0x6F**       | **0x90**     |
+| A     | 1 | 1 | 1 | 0 | 1 | 1 | 1 | **0x77**       | **0x88**     |
+| B     | 0 | 0 | 1 | 1 | 1 | 1 | 1 | **0x7C**       | **0x83**     |
+| C     | 1 | 0 | 0 | 1 | 1 | 1 | 0 | **0x39**       | **0xC6**     |
+| D     | 0 | 1 | 1 | 1 | 1 | 0 | 1 | **0x5E**       | **0xA1**     |
+| E     | 1 | 0 | 0 | 1 | 1 | 1 | 1 | **0x79**       | **0x86**     |
+| F     | 1 | 0 | 0 | 0 | 1 | 1 | 1 | **0x71**       | **0x8E**     |
 
 #### Explanation:
 - **A, B, C, D, E, F, G** represent the segments of the 7-segment display.
@@ -69,55 +69,72 @@ To display the number '3', the required segments are A, B, C, D, and G. In a com
 
 
 ```c
-/* Common Cathode (Hex values for digits 0-15) */
+/* ============================================================================
+ *                      7-SEGMENT DISPLAY LOOKUP TABLES
+ * ============================================================================ */
+/**
+ * @brief 7-Segment display encoding for hexadecimal digits (0-F)
+ * @note Segment layout: ABCDEFG (bit 7 unused, bit 0 = G)
+ *       
+ *        A
+ *       ---
+ *    F |   | B
+ *       -G-
+ *    E |   | C
+ *       ---
+ *        D
+ */
+
+/* Common Cathode (Active HIGH - segments light when bit = 1) */
 const uint8_t Seg7_cc[16] = 
 {
-    0x3F, // 0
-    0x06, // 1
-    0xB6, // 2
-    0x9E, // 3
-    0x66, // 4
-    0x5E, // 5
-    0x7E, // 6
-    0x4E, // 7
-    0x7F, // 8
-    0x6E, // 9
-    0x7B, // A
-    0x3E, // B
-    0x5C, // C
-    0x7A, // D
-    0x7D, // E
-    0x5F  // F
+    0x3F, /**< 0: ABCDEF   (0b00111111) */
+    0x06, /**< 1: BC       (0b00000110) */
+    0x5B, /**< 2: ABDEG    (0b01011011) */
+    0x4F, /**< 3: ABCDG    (0b01001111) */
+    0x66, /**< 4: BCFG     (0b01100110) */
+    0x6D, /**< 5: ACDFG    (0b01101101) */
+    0x7D, /**< 6: ACDEFG   (0b01111101) */
+    0x07, /**< 7: ABC      (0b00000111) */
+    0x7F, /**< 8: ABCDEFG  (0b01111111) */
+    0x6F, /**< 9: ABCDFG   (0b01101111) */
+    0x77, /**< A: ABCEFG   (0b01110111) */
+    0x7C, /**< B: CDEFG    (0b01111100) */
+    0x39, /**< C: ADEF     (0b00111001) */
+    0x5E, /**< D: BCDEG    (0b01011110) */
+    0x79, /**< E: ADEFG    (0b01111001) */
+    0x71  /**< F: AEFG     (0b01110001) */
 };
 
-/* Common Anode (Hex values for digits 0-15) */
+/* Common Anode (Active LOW - segments light when bit = 0) */
 const uint8_t Seg7_ca[16] = 
 {
-    0xC0, // 0
-    0xF9, // 1
-    0x49, // 2
-    0x41, // 3
-    0x99, // 4
-    0x62, // 5
-    0x32, // 6
-    0xB9, // 7
-    0x30, // 8
-    0x51, // 9
-    0x5A, // A
-    0x6A, // B
-    0x74, // C
-    0x3A, // D
-    0x6E, // E
-    0x5E  // F
+    0xC0, /**< 0: ABCDEF   (0b11000000) */
+    0xF9, /**< 1: BC       (0b11111001) */
+    0xA4, /**< 2: ABDEG    (0b10100100) */
+    0xB0, /**< 3: ABCDG    (0b10110000) */
+    0x99, /**< 4: BCFG     (0b10011001) */
+    0x92, /**< 5: ACDFG    (0b10010010) */
+    0x82, /**< 6: ACDEFG   (0b10000010) */
+    0xF8, /**< 7: ABC      (0b11111000) */
+    0x80, /**< 8: ABCDEFG  (0b10000000) */
+    0x90, /**< 9: ABCDFG   (0b10010000) */
+    0x88, /**< A: ABCEFG   (0b10001000) */
+    0x83, /**< B: CDEFG    (0b10000011) */
+    0xC6, /**< C: ADEF     (0b11000110) */
+    0xA1, /**< D: BCDEG    (0b10100001) */
+    0x86, /**< E: ADEFG    (0b10000110) */
+    0x8E  /**< F: AEFG     (0b10001110) */
 };
 ```
 
 ```c
 /* Common Cathode (Hex values for digits 0–15) */
-const uint8_t Seg7_cc[16] = { 0x3F, 0x06, 0xB6, 0x9E, 0x66, 0x5E, 0x7E, 0x4E, 0x7F, 0x6E, 0x7B, 0x3E, 0x5C, 0x7A, 0x7D, 0x5F };
+const uint8_t Seg7_cc[16] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71};
 
 /* Common Anode (Hex values for digits 0–15) */
-const uint8_t Seg7_ca[16] = { 0xC0, 0xF9, 0x49, 0x41, 0x99, 0x62, 0x32, 0xB9, 0x30, 0x51, 0x5A, 0x6A, 0x74, 0x3A, 0x6E, 0x5E };
+const uint8_t Seg7_ca[16] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90, 0x88, 0x83, 0xC6, 0xA1, 0x86, 0x8E};
+
 ```
 
 # 🌟 Support Me
