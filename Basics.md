@@ -69,22 +69,6 @@ To display the number '3', the required segments are A, B, C, D, and G. In a com
 
 
 ```c
-/* ============================================================================
- *                      7-SEGMENT DISPLAY LOOKUP TABLES
- * ============================================================================ */
-/**
- * @brief 7-Segment display encoding for hexadecimal digits (0-F)
- * @note Segment layout: ABCDEFG (bit 7 unused, bit 0 = G)
- *       
- *        A
- *       ---
- *    F |   | B
- *       -G-
- *    E |   | C
- *       ---
- *        D
- */
-
 /* Common Cathode (Active HIGH - segments light when bit = 1) */
 const uint8_t Seg7_cc[16] = 
 {
