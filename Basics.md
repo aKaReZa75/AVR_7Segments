@@ -35,29 +35,28 @@ To display the number '3', the required segments are A, B, C, D, and G. In a com
 
 ### 7-Segment Display Segment Control (Hexadecimal Format)
 
-| Digit | A | B | C | D | E | F | G | Common Cathode | Common Anode |
-|-------|---|---|---|---|---|---|---|----------------|--------------|
-| 0     | 1 | 1 | 1 | 1 | 1 | 1 | 0 | **0x3F**       | **0xC0**     |
-| 1     | 0 | 1 | 1 | 0 | 0 | 0 | 0 | **0x06**       | **0xF9**     |
-| 2     | 1 | 1 | 0 | 1 | 1 | 0 | 1 | **0x5B**       | **0xA4**     |
-| 3     | 1 | 1 | 1 | 1 | 0 | 0 | 1 | **0x4F**       | **0xB0**     |
-| 4     | 0 | 1 | 1 | 0 | 0 | 1 | 1 | **0x66**       | **0x99**     |
-| 5     | 1 | 0 | 1 | 1 | 0 | 1 | 1 | **0x6D**       | **0x92**     |
-| 6     | 1 | 0 | 1 | 1 | 1 | 1 | 1 | **0x7D**       | **0x82**     |
-| 7     | 1 | 1 | 1 | 0 | 0 | 0 | 0 | **0x07**       | **0xF8**     |
-| 8     | 1 | 1 | 1 | 1 | 1 | 1 | 1 | **0x7F**       | **0x80**     |
-| 9     | 1 | 1 | 1 | 1 | 0 | 1 | 1 | **0x6F**       | **0x90**     |
-| A     | 1 | 1 | 1 | 0 | 1 | 1 | 1 | **0x77**       | **0x88**     |
-| B     | 0 | 0 | 1 | 1 | 1 | 1 | 1 | **0x7C**       | **0x83**     |
-| C     | 1 | 0 | 0 | 1 | 1 | 1 | 0 | **0x39**       | **0xC6**     |
-| D     | 0 | 1 | 1 | 1 | 1 | 0 | 1 | **0x5E**       | **0xA1**     |
-| E     | 1 | 0 | 0 | 1 | 1 | 1 | 1 | **0x79**       | **0x86**     |
-| F     | 1 | 0 | 0 | 0 | 1 | 1 | 1 | **0x71**       | **0x8E**     |
+| Digit | A | B | C | D | E | F | G | Common Cathode (Active HIGH) | Common Anode (Active LOW) |
+|-------|-----|-----|-----|-----|-----|-----|-----|------------------------------|---------------------------|
+| **0** | ON  | ON  | ON  | ON  | ON  | ON  | OFF | 0b00111111 → **0x3F**        | 0b11000000 → **0xC0**     |
+| **1** | OFF | ON  | ON  | OFF | OFF | OFF | OFF | 0b00000110 → **0x06**        | 0b11111001 → **0xF9**     |
+| **2** | ON  | ON  | OFF | ON  | ON  | OFF | ON  | 0b01011011 → **0x5B**        | 0b10100100 → **0xA4**     |
+| **3** | ON  | ON  | ON  | ON  | OFF | OFF | ON  | 0b01001111 → **0x4F**        | 0b10110000 → **0xB0**     |
+| **4** | OFF | ON  | ON  | OFF | OFF | ON  | ON  | 0b01100110 → **0x66**        | 0b10011001 → **0x99**     |
+| **5** | ON  | OFF | ON  | ON  | OFF | ON  | ON  | 0b01101101 → **0x6D**        | 0b10010010 → **0x92**     |
+| **6** | ON  | OFF | ON  | ON  | ON  | ON  | ON  | 0b01111101 → **0x7D**        | 0b10000010 → **0x82**     |
+| **7** | ON  | ON  | ON  | OFF | OFF | OFF | OFF | 0b00000111 → **0x07**        | 0b11111000 → **0xF8**     |
+| **8** | ON  | ON  | ON  | ON  | ON  | ON  | ON  | 0b01111111 → **0x7F**        | 0b10000000 → **0x80**     |
+| **9** | ON  | ON  | ON  | ON  | OFF | ON  | ON  | 0b01101111 → **0x6F**        | 0b10010000 → **0x90**     |
+| **A** | ON  | ON  | ON  | OFF | ON  | ON  | ON  | 0b01110111 → **0x77**        | 0b10001000 → **0x88**     |
+| **B** | OFF | OFF | ON  | ON  | ON  | ON  | ON  | 0b01111100 → **0x7C**        | 0b10000011 → **0x83**     |
+| **C** | ON  | OFF | OFF | ON  | ON  | ON  | OFF | 0b00111001 → **0x39**        | 0b11000110 → **0xC6**     |
+| **D** | OFF | ON  | ON  | ON  | ON  | OFF | ON  | 0b01011110 → **0x5E**        | 0b10100001 → **0xA1**     |
+| **E** | ON  | OFF | OFF | ON  | ON  | ON  | ON  | 0b01111001 → **0x79**        | 0b10000110 → **0x86**     |
+| **F** | ON  | OFF | OFF | OFF | ON  | ON  | ON  | 0b01110001 → **0x71**        | 0b10001110 → **0x8E**     |
+
 
 #### Explanation:
 - **A, B, C, D, E, F, G** represent the segments of the 7-segment display.
-  - **1** means the segment is ON.
-  - **0** means the segment is OFF.
 
 - **Common Cathode**:
   - In a **common cathode** configuration, a **HIGH** signal turns on the segment.
