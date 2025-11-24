@@ -5,8 +5,8 @@ A 7-segment display has 7 individual LEDs arranged in the form of a figure-eight
     A
   -----
 F|     |B
-  -----
-G|     |C
+  --G--
+E|     |C
   -----
     D
 ```
